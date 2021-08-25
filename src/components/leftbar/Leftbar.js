@@ -4,7 +4,7 @@ import { RssFeed, Chat, Theaters, Group, Event, Bookmark, Help, Work } from '@ma
 import { users } from '../../mockData';
 import CloseFriends from '../close_friends/CloseFriends';
 
-const Leftbar = () => {
+const Leftbar = () => {  
   return (
     <div className="leftbar">
       <div className="leftbar__wrapper">

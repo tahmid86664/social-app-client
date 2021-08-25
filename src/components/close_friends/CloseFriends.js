@@ -2,9 +2,11 @@ import React from 'react';
 import './CloseFriends.scss';
 
 const CloseFriends = ({ user }) => {
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <li key={user.id} className="leftbar__friend">
-      <img src={user.imgUrl} 
+      <img src={publicFolder + user.imgUrl} 
         alt="friend profile img" 
         className="leftbar__friendImg" 
       />

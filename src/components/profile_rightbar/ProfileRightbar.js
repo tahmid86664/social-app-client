@@ -3,6 +3,8 @@ import './ProfileRightbar.scss';
 import { users } from '../../mockData';
 
 const ProfileRightbar = () => {
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
+
   return (
     <div className="profileRightbar">
       <div className="profileRightbar__infoContainer">
@@ -31,7 +33,7 @@ const ProfileRightbar = () => {
         {
           users.filter(user => !user.isLogin).map(friend => 
             <div className="profileRightbar__friend">
-              <img src={friend.imgUrl} alt="friend img" className="profileRightbar__friendImg" />
+              <img src={publicFolder + friend.imgUrl} alt="friend img" className="profileRightbar__friendImg" />
               <span>{friend.name}</span>
             </div>
           )

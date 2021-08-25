@@ -8,6 +8,7 @@ import { users } from '../../mockData';
 
 const Profile = () => {
   const [user] = useState(users.filter(user => user.isLogin)[0]);
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (
     <div className="profile">
@@ -18,7 +19,7 @@ const Profile = () => {
           <div className="profile__rightTop">
             <div className="profile__topImages">
               <img src="/assets/post/1.jpeg" alt="" className="profile__coverImg" />
-              <img src={user.imgUrl} alt="" className="profile__profileImg" />
+              <img src={publicFolder + user.imgUrl} alt="" className="profile__profileImg" />
             </div>
             <div className="profile__userInfo">
               <h4>{user.name}</h4>

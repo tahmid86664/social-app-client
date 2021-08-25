@@ -2,12 +2,17 @@ import React from 'react';
 import './Topbar.scss';
 import { Search, Person, Chat, Notifications } from '@material-ui/icons';
 import { users } from '../../mockData';
+import { Link } from 'react-router-dom';
 
 const Topbar = () => {
+  const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
+  
   return (
     <div className="topbar">
       <div className="topbarLeft">
-        <span className="topbarLogo">Friendlyyy</span> 
+        <Link to="/" style={{textDecoration: "none"}}>
+          <span className="topbarLogo">Friendlyyy</span> 
+        </Link>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
@@ -34,7 +39,9 @@ const Topbar = () => {
             <span className="topbarIconBadge">1</span>
           </div>
         </div>
-        <img className="topbarProfileImg" src={users.filter(user => user.isLogin)[0].imgUrl} alt="profile" />
+        <Link to="/user/username" style={{textDecoration: "none"}}>
+          <img className="topbarProfileImg" src={publicFolder + users.filter(user => user.isLogin)[0].imgUrl} alt="profile" />
+        </Link>
       </div>
     </div>
   );
