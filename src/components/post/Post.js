@@ -4,9 +4,10 @@ import { MoreVert } from '@material-ui/icons';
 import ReactEmoji from 'react-emoji';
 // import { users } from '../../mockData';
 import axios from 'axios';
+import { format } from 'timeago.js';
 
 const Post = ({ id, postUserId, postUserTimestamp, postImg, postText, postLikes, postCommentCount }) => {
-  const [likes, setLikes] = useState(postLikes);
+  const [likes, setLikes] = useState(postLikes.length);
   const [isLiked, setIsLiked] = useState(false);
   const [user, setUser] = useState({});
 
@@ -33,9 +34,9 @@ const Post = ({ id, postUserId, postUserTimestamp, postImg, postText, postLikes,
       <div className="post__wrapper">
         <div className="post__top">
           <div className="post__topLeft">
-            <img src={publicFolder + user.profilePicture || ""} alt="post top profile img" className="post__topImg" />
+            <img src={user.profilePicture === "" ? `${publicFolder}no-image.png` : publicFolder + user.profilePicture || ""} alt="post top profile img" className="post__topImg" />
             <span className="post__topLeftUsername">{user.username}</span>
-            <span className="post__topLeftTimestamp">{postUserTimestamp}</span>
+            <span className="post__topLeftTimestamp">{format(postUserTimestamp)}</span>
           </div>
           <div className="post__topRight">
             <MoreVert />
