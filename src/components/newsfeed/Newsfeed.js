@@ -3,11 +3,11 @@ import './Newsfeed.scss';
 import Share from '../share/Share';
 import Posts from '../posts/Posts';
 
-const Newsfeed = () => {
+const Newsfeed = ({ user }) => {
   return (
     <div className="newsfeed">
-      <Share />
-      <Posts />
+        <Share user={user} />
+        <Posts /> 
     </div>
   );
 }

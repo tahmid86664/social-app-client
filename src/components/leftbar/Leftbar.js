@@ -5,6 +5,7 @@ import { users } from '../../mockData';
 import CloseFriends from '../close_friends/CloseFriends';
 
 const Leftbar = () => {  
+  // console.log(user.followings)
   return (
     <div className="leftbar">
       <div className="leftbar__wrapper">
@@ -46,7 +47,7 @@ const Leftbar = () => {
         <hr className="leftbar__hr" />
         <ul className="leftbar__friendList">
           {
-            users.filter(user => !user.isLogin).map(user => 
+            users.filter(user => ~user.isLogin).map(user => 
               <CloseFriends key={user.id} user={user} />
             )
           }

@@ -14,7 +14,7 @@ const Post = ({ id, postUserId, postUserTimestamp, postImg, postText, postLikes,
 
   useEffect(() => {
     const fetchUser = async () => {
-      const res = await axios.get(`users/${postUserId}`)
+      const res = await axios.get(`/users?userId=${postUserId}`)
       setUser(res.data);
       console.log(res)
     }

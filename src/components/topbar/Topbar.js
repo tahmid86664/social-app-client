@@ -1,10 +1,10 @@
 import React from 'react';
 import './Topbar.scss';
 import { Search, Person, Chat, Notifications } from '@material-ui/icons';
-import { users } from '../../mockData';
+// import { users } from '../../mockData';
 import { Link } from 'react-router-dom';
 
-const Topbar = () => {
+const Topbar = ({ user }) => {
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
   
   return (
@@ -40,7 +40,7 @@ const Topbar = () => {
           </div>
         </div>
         <Link to="/user/username" style={{textDecoration: "none"}}>
-          <img className="topbarProfileImg" src={publicFolder + users.filter(user => user.isLogin)[0].imgUrl} alt="profile" />
+          <img className="topbarProfileImg" src={user ? publicFolder + user.profilePicture : publicFolder + "no-image.png" } alt="profile" />
         </Link>
       </div>
     </div>

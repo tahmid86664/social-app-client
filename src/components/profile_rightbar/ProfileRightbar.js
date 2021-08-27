@@ -1,8 +1,9 @@
 import React from 'react';
 import './ProfileRightbar.scss';
 import { users } from '../../mockData';
+import { format } from 'timeago.js';
 
-const ProfileRightbar = () => {
+const ProfileRightbar = ({ user }) => {
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
 
   return (
@@ -12,19 +13,19 @@ const ProfileRightbar = () => {
         <div className="profileRightbar__info">
           <div className="profileRightbar__infoItem">
             <span className="profileRightbar__infoItemKey">City:</span>
-            <span>New York</span>
+            <span>{user.city}</span>
           </div>
           <div className="profileRightbar__infoItem">
             <span className="profileRightbar__infoItemKey">From:</span>
-            <span>London</span>
+            <span>{user.from}</span>
           </div>
           <div className="profileRightbar__infoItem">
             <span className="profileRightbar__infoItemKey">Relationship:</span>
-            <span>Single</span>
+            <span>{user.relationship === 1 ? "Single" : user.relationship === 2 ? "Married" : "Not set"}</span>
           </div>
           <div className="profileRightbar__infoItem">
             <span className="profileRightbar__infoItemKey">Join on:</span>
-            <span>7/30/2021</span>
+            <span>{format(user.createdAt)}</span>
           </div>
         </div>
       </div>
