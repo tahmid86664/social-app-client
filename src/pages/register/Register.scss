@@ -38,6 +38,23 @@
     .register__right {
       align-items: center;
 
+      .register__error {
+        width: 420px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: red;
+        color: white;
+        font-weight: 600;
+        font-size: 18px;
+        margin-bottom: 5px;
+        padding: 10px 30px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.36);
+        box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.36);
+      }
+
       .register__formContainer {
         width: 420px;
         height: auto;

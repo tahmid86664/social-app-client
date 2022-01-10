@@ -18,7 +18,7 @@ const Posts = ({ user, profile }) => {
     };
 
     fetchPosts();
-  }, [user.username]);
+  }, [user.username, user._id, profile, posts]);
 
   return (
     <div className="posts">
