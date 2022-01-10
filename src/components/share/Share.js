@@ -1,7 +1,12 @@
-import React from 'react';
-import './Share.scss';
-import { PermMedia, Loyalty, LocationOn, EmojiEmotions } from '@material-ui/icons';
-import { users } from '../../mockData';
+import React from "react";
+import "./Share.scss";
+import {
+  PermMedia,
+  Loyalty,
+  LocationOn,
+  EmojiEmotions,
+} from "@material-ui/icons";
+import { users } from "../../mockData";
 
 const Share = ({ user }) => {
   const publicFolder = process.env.REACT_APP_PUBLIC_FOLDER;
@@ -10,8 +15,20 @@ const Share = ({ user }) => {
     <div className="share">
       <div className="share__wrapper">
         <div className="share__top">
-          <img src={user ? publicFolder + user.profilePicture : publicFolder + 'no-image.png'} alt="profile img on share tab" className="share__profileImg" />
-          <input type="text" className="share__input" placeholder="What's on your mind Lisa?" />
+          <img
+            src={
+              user.profilePicture !== ""
+                ? publicFolder + user.profilePicture
+                : publicFolder + "no-image.png"
+            }
+            alt="profile img on share tab"
+            className="share__profileImg"
+          />
+          <input
+            type="text"
+            className="share__input"
+            placeholder="What's on your mind Lisa?"
+          />
         </div>
         <hr />
         <div className="share__bottom">
@@ -38,7 +55,6 @@ const Share = ({ user }) => {
       </div>
     </div>
   );
-}
-
+};
 
 export default Share;
