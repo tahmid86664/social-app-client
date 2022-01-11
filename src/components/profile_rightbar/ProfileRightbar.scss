@@ -1,6 +1,25 @@
-.profileRightbar {
+@import "../../global.scss";
 
+.profileRightbar {
   .profileRightbar__infoContainer {
+    .profileRightbar__followButton {
+      background-color: $maincolor;
+      color: white;
+      height: 50px;
+      width: 100px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
 
     h4 {
       font-size: 22px;
@@ -34,24 +53,35 @@
     flex-wrap: wrap;
     margin-top: 10px;
 
-    .profileRightbar__friend {
+    a {
+      text-decoration: none;
+      color: black;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 15px 25px 0;
-      width: 120px;
+      flex-wrap: wrap;
 
-      img {
-        width: 100px;
-        height: 100px;
-        border-radius: 10px;
-        object-fit: cover;
-      }
-      span {
-        font-size: 16px;
-        font-weight: 500;
-        margin-top: 7px;
-        text-align: center;
+      .profileRightbar__friend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 15px 25px 0;
+        width: 120px;
+
+        img {
+          width: 100px;
+          height: 100px;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+        span {
+          font-size: 16px;
+          font-weight: 500;
+          margin-top: 7px;
+          text-align: center;
+        }
+
+        &:hover {
+          opacity: 0.85;
+        }
       }
     }
   }

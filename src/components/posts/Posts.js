@@ -13,12 +13,17 @@ const Posts = ({ user, profile }) => {
         const res = profile
           ? await axios.get(`/posts/profile/${user.username}`)
           : await axios.get(`/posts/timeline/${user._id}`);
-        setPosts(res.data);
+        setPosts(
+          res.data.sort((p1, p2) => {
+            return new Date(p2.createdAt) - new Date(p1.createdAt);
+            // sort the data accoring to create time
+          })
+        );
       }
     };
 
     fetchPosts();
-  }, [user.username, user._id, profile, posts]);
+  }, [user.username, user._id, profile]);
 
   return (
     <div className="posts">

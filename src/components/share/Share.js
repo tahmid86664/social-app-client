@@ -64,6 +64,7 @@ const Share = () => {
       setProgess(0);
       setFile(null);
       desc.current.value = "";
+      window.location.reload(false);
     } catch (err) {
       console.log(err);
     }
